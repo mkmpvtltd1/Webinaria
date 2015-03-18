@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{349C003E-2A67-49C9-AD20-2D3B29AAB89A}</ProjectGuid>
+    <RootNamespace>WebinariaPreviewer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\..\lib\DirectShowBaseClasses;..\..\lib\htmlayout;..\..\lib\htmlayout\behaviors;..\common;..\common\Licensing;..\RmBkFilter;.\Timeline;.\TimelineControl;.\TimelineControl\OverlayElementEditors;..\SharedUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;WINVER=0x0501;DEBUG;WIN32;_DEBUG;_WIN32_WINNT=0x501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>strmbase.lib;quartz.lib;winmm.lib;msacm32.lib;olepro32.lib;strmiids.lib;strsafe.lib;comctl32.lib;shlwapi.lib;SharedUI.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib\DirectShowBaseClasses;..\..\lib\htmlayout;..\..\lib\htmlayout\behaviors;..\..\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(ProjectDir)\UI\copyui.cmd "$(SolutionDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\..\lib\DirectShowBaseClasses;..\..\lib\htmlayout;..\..\lib\htmlayout\behaviors;..\common;..\common\Licensing;..\RmBkFilter;.\Timeline;.\TimelineControl;.\TimelineControl\OverlayElementEditors;..\SharedUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;WINVER=0x0501;NDEBUG;WIN32;_WIN32_WINNT=0x501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalDependencies>strmbase.lib;quartz.lib;winmm.lib;msacm32.lib;olepro32.lib;strmiids.lib;strsafe.lib;comctl32.lib;shlwapi.lib;SharedUI.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib\DirectShowBaseClasses;..\..\lib\htmlayout;..\..\lib\htmlayout\behaviors;..\..\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences />
+      <EnableCOMDATFolding />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(ProjectDir)\UI\copyui.cmd "$(SolutionDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="CustomWindow.cpp" />
+    <ClCompile Include="Editor.cpp" />
+    <ClCompile Include="Error.cpp" />
+    <ClCompile Include="FileQualitySelector.cpp" />
+    <ClCompile Include="FLVConverter.cpp" />
+    <ClCompile Include="Parameters.cpp" />
+    <ClCompile Include="Previewer.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Viewer.cpp" />
+    <ClCompile Include="WebcamControl.cpp" />
+    <ClCompile Include="..\common\Branding.cpp" />
+    <ClCompile Include="..\common\FileSelector.cpp" />
+    <ClCompile Include="..\common\FileStream.cpp" />
+    <ClCompile Include="..\common\Folders.cpp" />
+    <ClCompile Include="..\common\intervals.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\common\Registrar.cpp" />
+    <ClCompile Include="..\common\utils.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\common\VersionInfo.cpp" />
+    <ClCompile Include="..\common\Web.cpp" />
+    <ClCompile Include="Timeline\Overlay.cpp" />
+    <ClCompile Include="Timeline\OverlayElement.cpp" />
+    <ClCompile Include="Timeline\OverlaysEnum.cpp" />
+    <ClCompile Include="Timeline\TextElement.cpp" />
+    <ClCompile Include="Timeline\Timeline.cpp" />
+    <ClCompile Include="TimelineControl\OverlayControl.cpp" />
+    <ClCompile Include="TimelineControl\TimelineControl.cpp" />
+    <ClCompile Include="TimelineControl\OverlayElementEditors\OverlayElementEditor.cpp" />
+    <ClCompile Include="TimelineControl\OverlayElementEditors\OverlayElementEditorManager.cpp" />
+    <ClCompile Include="TimelineControl\OverlayElementEditors\TextElementEditor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="CustomWindow.h" />
+    <ClInclude Include="Error.h" />
+    <ClInclude Include="FileQualitySelector.h" />
+    <ClInclude Include="FLVConverter.h" />
+    <ClInclude Include="..\common\intervals.h" />
+    <ClInclude Include="Parameters.h" />
+    <ClInclude Include="Previewer.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Viewer.h" />
+    <ClInclude Include="WebcamControl.h" />
+    <ClInclude Include="..\common\Branding.h" />
+    <ClInclude Include="..\common\FileSelector.h" />
+    <ClInclude Include="..\common\FileStream.h" />
+    <ClInclude Include="..\common\Folders.h" />
+    <ClInclude Include="..\common\Registrar.h" />
+    <ClInclude Include="..\common\TimelineErrorCodes.h" />
+    <ClInclude Include="..\common\utils.h" />
+    <ClInclude Include="..\common\VersionInfo.h" />
+    <ClInclude Include="..\common\Web.h" />
+    <ClInclude Include="Timeline\Overlay.h" />
+    <ClInclude Include="Timeline\OverlayElement.h" />
+    <ClInclude Include="Timeline\OverlaysEnum.h" />
+    <ClInclude Include="Timeline\TextElement.h" />
+    <ClInclude Include="Timeline\Timeline.h" />
+    <ClInclude Include="TimelineControl\OverlayControl.h" />
+    <ClInclude Include="TimelineControl\TimelineControl.h" />
+    <ClInclude Include="TimelineControl\OverlayElementEditors\OverlayElementEditor.h" />
+    <ClInclude Include="TimelineControl\OverlayElementEditors\OverlayElementEditorManager.h" />
+    <ClInclude Include="TimelineControl\OverlayElementEditors\TextElementEditor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico" />
+    <Image Include="res\camera-video.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Webinaria.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JPEG\JPEG.vcxproj">
+      <Project>{a94486df-c33a-44ca-b947-1332eafc4969}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\RmBkFilter\RmBkFilter.vcxproj">
+      <Project>{04393d3d-97c9-4e86-a61e-b8c01d10230a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedUI\SharedUI.vcxproj">
+      <Project>{b993d212-28ea-4821-b5cc-2d6af42f5e08}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

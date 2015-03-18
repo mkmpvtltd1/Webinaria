@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{4e201898-3502-4e62-b9ea-461bee20e27b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Timeline">
+      <UniqueIdentifier>{04b57ee5-a331-4ca8-af52-5da9deb72853}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TimelineControl">
+      <UniqueIdentifier>{686e7edd-fa0e-4b0b-90f5-22c9810a8eaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TimelineControl\OverlayElementEditors">
+      <UniqueIdentifier>{192f740c-603c-4fa2-8239-6432dfd89064}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileQualitySelector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FLVConverter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parameters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Previewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Viewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebcamControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\Branding.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\FileSelector.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\FileStream.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\Folders.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\intervals.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\Registrar.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\utils.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\VersionInfo.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\Web.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Timeline\Overlay.cpp">
+      <Filter>Timeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Timeline\OverlayElement.cpp">
+      <Filter>Timeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Timeline\OverlaysEnum.cpp">
+      <Filter>Timeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Timeline\TextElement.cpp">
+      <Filter>Timeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Timeline\Timeline.cpp">
+      <Filter>Timeline</Filter>
+    </ClCompile>
+    <ClCompile Include="TimelineControl\OverlayControl.cpp">
+      <Filter>TimelineControl</Filter>
+    </ClCompile>
+    <ClCompile Include="TimelineControl\TimelineControl.cpp">
+      <Filter>TimelineControl</Filter>
+    </ClCompile>
+    <ClCompile Include="TimelineControl\OverlayElementEditors\OverlayElementEditor.cpp">
+      <Filter>TimelineControl\OverlayElementEditors</Filter>
+    </ClCompile>
+    <ClCompile Include="TimelineControl\OverlayElementEditors\OverlayElementEditorManager.cpp">
+      <Filter>TimelineControl\OverlayElementEditors</Filter>
+    </ClCompile>
+    <ClCompile Include="TimelineControl\OverlayElementEditors\TextElementEditor.cpp">
+      <Filter>TimelineControl\OverlayElementEditors</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileQualitySelector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FLVConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\intervals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parameters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Previewer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Viewer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebcamControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Branding.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\FileSelector.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\FileStream.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Folders.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Registrar.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\TimelineErrorCodes.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\utils.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\VersionInfo.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Web.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Timeline\Overlay.h">
+      <Filter>Timeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Timeline\OverlayElement.h">
+      <Filter>Timeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Timeline\OverlaysEnum.h">
+      <Filter>Timeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Timeline\TextElement.h">
+      <Filter>Timeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Timeline\Timeline.h">
+      <Filter>Timeline</Filter>
+    </ClInclude>
+    <ClInclude Include="TimelineControl\OverlayControl.h">
+      <Filter>TimelineControl</Filter>
+    </ClInclude>
+    <ClInclude Include="TimelineControl\TimelineControl.h">
+      <Filter>TimelineControl</Filter>
+    </ClInclude>
+    <ClInclude Include="TimelineControl\OverlayElementEditors\OverlayElementEditor.h">
+      <Filter>TimelineControl\OverlayElementEditors</Filter>
+    </ClInclude>
+    <ClInclude Include="TimelineControl\OverlayElementEditors\OverlayElementEditorManager.h">
+      <Filter>TimelineControl\OverlayElementEditors</Filter>
+    </ClInclude>
+    <ClInclude Include="TimelineControl\OverlayElementEditors\TextElementEditor.h">
+      <Filter>TimelineControl\OverlayElementEditors</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\camera-video.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Webinaria.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

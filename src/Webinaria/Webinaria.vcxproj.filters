@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="HTMLayout">
+      <UniqueIdentifier>{093cf5fb-573f-4e99-99c4-66dcc4ef9043}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HTMLayout\Behaviors">
+      <UniqueIdentifier>{d511fec5-1981-421e-a583-50e9fec26607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{dd7105c0-8980-4077-8726-c8cac0a05b66}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioGrabber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioVideoGrabber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Authorization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceEnumerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Grabber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Microphone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recorder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RegionSelector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenGrabber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundSetup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TrayIcon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WDMGrabber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Webinaria.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_accesskeys.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_actions.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_clock.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_collapsible_by_icon.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_command.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_editable_select.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_expandable_list.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_form.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_grid.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_hyperlink.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_path.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_popup.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_scroller.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_select_buddy.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_select_checkmark.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_splitter.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_tabs.cpp">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\Branding.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\FileSelector.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\Folders.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\Registrar.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\utils.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\VersionInfo.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\Web.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioGrabber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioVideoGrabber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Authorization.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceEnumerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Grabber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\UScreenCapture\iscreencapture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Microphone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Recorder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegionSelector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenGrabber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundSetup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrayIcon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WDMGrabber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout.h">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_aux.h">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_behavior.h">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_behavior.hpp">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_controls.hpp">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_dialog.hpp">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_dom.h">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_dom.hpp">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_notifications.hpp">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_value.hpp">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_x.h">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\htmprint.h">
+      <Filter>HTMLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\behaviors\behavior_aux.h">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\htmlayout\behaviors\notifications.h">
+      <Filter>HTMLayout\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Branding.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\FileSelector.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Folders.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Registrar.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\VersionInfo.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Web.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="flash.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Webinaria.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

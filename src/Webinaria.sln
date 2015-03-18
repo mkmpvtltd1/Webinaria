@@ -1,25 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Webinaria", "Webinaria\Webinaria.vcproj", "{A26A0DB5-BB42-4F10-A6EE-8F184CE498BC}"
-	ProjectSection(ProjectDependencies) = postProject
-		{349C003E-2A67-49C9-AD20-2D3B29AAB89A} = {349C003E-2A67-49C9-AD20-2D3B29AAB89A}
-		{04393D3D-97C9-4E86-A61E-B8C01D10230A} = {04393D3D-97C9-4E86-A61E-B8C01D10230A}
-		{B993D212-28EA-4821-B5CC-2D6AF42F5E08} = {B993D212-28EA-4821-B5CC-2D6AF42F5E08}
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Webinaria", "Webinaria\Webinaria.vcxproj", "{A26A0DB5-BB42-4F10-A6EE-8F184CE498BC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebinariaEditor", "WebinariaEditor\WebinariaEditor.vcproj", "{349C003E-2A67-49C9-AD20-2D3B29AAB89A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{B993D212-28EA-4821-B5CC-2D6AF42F5E08} = {B993D212-28EA-4821-B5CC-2D6AF42F5E08}
-		{04393D3D-97C9-4E86-A61E-B8C01D10230A} = {04393D3D-97C9-4E86-A61E-B8C01D10230A}
-		{A94486DF-C33A-44CA-B947-1332EAFC4969} = {A94486DF-C33A-44CA-B947-1332EAFC4969}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebinariaEditor", "WebinariaEditor\WebinariaEditor.vcxproj", "{349C003E-2A67-49C9-AD20-2D3B29AAB89A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JPEG", "JPEG\JPEG.vcproj", "{A94486DF-C33A-44CA-B947-1332EAFC4969}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JPEG", "JPEG\JPEG.vcxproj", "{A94486DF-C33A-44CA-B947-1332EAFC4969}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RmBkFilter", "RmBkFilter\RmBkFilter.vcproj", "{04393D3D-97C9-4E86-A61E-B8C01D10230A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RmBkFilter", "RmBkFilter\RmBkFilter.vcxproj", "{04393D3D-97C9-4E86-A61E-B8C01D10230A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SharedUI", "SharedUI\SharedUI.vcproj", "{B993D212-28EA-4821-B5CC-2D6AF42F5E08}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SharedUI", "SharedUI\SharedUI.vcxproj", "{B993D212-28EA-4821-B5CC-2D6AF42F5E08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

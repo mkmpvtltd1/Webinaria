@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A26A0DB5-BB42-4F10-A6EE-8F184CE498BC}</ProjectGuid>
+    <RootNamespace>Webinaria</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\common;..\..\lib\DirectShowBaseClasses;..\..\lib\htmlayout;..\..\lib\htmlayout\behaviors;..\..\lib\UScreenCapture;..\SharedUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;WINVER=0x0500;DEBUG;WIN32;_DEBUG;_WIN32_WINNT=0x500;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>strmbase.lib;quartz.lib;winmm.lib;msacm32.lib;olepro32.lib;strmiids.lib;wininet.lib;strsafe.lib;SharedUI.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib\DirectShowBaseClasses;..\..\lib\htmlayout;..\..\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <StackReserveSize>0</StackReserveSize>
+      <StackCommitSize>0</StackCommitSize>
+      <EntryPointSymbol />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(ProjectDir)\UI\copyui.cmd "$(SolutionDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\common;..\..\lib\DirectShowBaseClasses;..\..\lib\htmlayout;..\..\lib\htmlayout\behaviors;..\..\lib\UScreenCapture;..\SharedUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;WINVER=0x0500;NDEBUG;WIN32;_WIN32_WINNT=0x500;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalDependencies>strmbase.lib;quartz.lib;winmm.lib;msacm32.lib;olepro32.lib;strmiids.lib;wininet.lib;strsafe.lib;SharedUI.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib\DirectShowBaseClasses;..\..\lib\htmlayout;..\..\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences />
+      <EnableCOMDATFolding />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(ProjectDir)\UI\copyui.cmd "$(SolutionDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="AudioGrabber.cpp" />
+    <ClCompile Include="AudioVideoGrabber.cpp" />
+    <ClCompile Include="Authorization.cpp" />
+    <ClCompile Include="CustomWindow.cpp" />
+    <ClCompile Include="DeviceEnumerator.cpp" />
+    <ClCompile Include="Error.cpp" />
+    <ClCompile Include="Grabber.cpp" />
+    <ClCompile Include="Microphone.cpp" />
+    <ClCompile Include="Recorder.cpp" />
+    <ClCompile Include="RegionSelector.cpp" />
+    <ClCompile Include="ScreenGrabber.cpp" />
+    <ClCompile Include="SoundSetup.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TrayIcon.cpp" />
+    <ClCompile Include="WDMGrabber.cpp" />
+    <ClCompile Include="Webinaria.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_accesskeys.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_actions.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_clock.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_collapsible_by_icon.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_command.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_editable_select.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_expandable_list.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_form.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_grid.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_hyperlink.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_path.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_popup.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_scroller.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_select_buddy.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_select_checkmark.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_splitter.cpp" />
+    <ClCompile Include="..\..\lib\htmlayout\behaviors\behavior_tabs.cpp" />
+    <ClCompile Include="..\common\Branding.cpp" />
+    <ClCompile Include="..\common\FileSelector.cpp" />
+    <ClCompile Include="..\common\Folders.cpp" />
+    <ClCompile Include="..\common\Registrar.cpp" />
+    <ClCompile Include="..\common\utils.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\common\VersionInfo.cpp" />
+    <ClCompile Include="..\common\Web.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="AudioGrabber.h" />
+    <ClInclude Include="AudioVideoGrabber.h" />
+    <ClInclude Include="Authorization.h" />
+    <ClInclude Include="CustomWindow.h" />
+    <ClInclude Include="DeviceEnumerator.h" />
+    <ClInclude Include="Error.h" />
+    <ClInclude Include="Grabber.h" />
+    <ClInclude Include="..\..\lib\UScreenCapture\iscreencapture.h" />
+    <ClInclude Include="Microphone.h" />
+    <ClInclude Include="Recorder.h" />
+    <ClInclude Include="RegionSelector.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ScreenGrabber.h" />
+    <ClInclude Include="SoundSetup.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TrayIcon.h" />
+    <ClInclude Include="WDMGrabber.h" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout.h" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_aux.h" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_behavior.h" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_behavior.hpp" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_controls.hpp" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_dialog.hpp" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_dom.h" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_dom.hpp" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_notifications.hpp" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_value.hpp" />
+    <ClInclude Include="..\..\lib\htmlayout\htmlayout_x.h" />
+    <ClInclude Include="..\..\lib\htmlayout\htmprint.h" />
+    <ClInclude Include="..\..\lib\htmlayout\behaviors\behavior_aux.h" />
+    <ClInclude Include="..\..\lib\htmlayout\behaviors\notifications.h" />
+    <ClInclude Include="..\common\Branding.h" />
+    <ClInclude Include="..\common\FileSelector.h" />
+    <ClInclude Include="..\common\Folders.h" />
+    <ClInclude Include="..\common\Registrar.h" />
+    <ClInclude Include="..\common\VersionInfo.h" />
+    <ClInclude Include="..\common\Web.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico" />
+    <Image Include="flash.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Webinaria.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RmBkFilter\RmBkFilter.vcxproj">
+      <Project>{04393d3d-97c9-4e86-a61e-b8c01d10230a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedUI\SharedUI.vcxproj">
+      <Project>{b993d212-28ea-4821-b5cc-2d6af42f5e08}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\WebinariaEditor\WebinariaEditor.vcxproj">
+      <Project>{349c003e-2a67-49c9-ad20-2d3b29aab89a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

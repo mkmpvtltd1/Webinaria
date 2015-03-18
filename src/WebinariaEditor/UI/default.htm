@@ -1,0 +1,366 @@
+<html>
+<head>
+    <style>
+	html 
+	{ 
+		font:10pt; 
+		font-family:  Arial;
+		overflow:hidden;
+	}
+	body 
+	{ 
+		padding:3px;
+		margin-left:0px;
+		background-color:#B8B8B8;
+		background-image:url(images/e_back.png);
+		background-repeat:repeat;
+		background-position:100% 0%;
+		width:100%%; 
+		height:100%%; 
+	}
+
+	#topbar
+	{
+		flow:horizontal;
+		margin-bottom:3px;
+	}
+
+	#topbar #caption 
+	{
+		color: #FFFFFF;
+		font-family: Tahoma, Verdana, Arial;
+		font-size:10pt;
+		font-weight: bold;
+		margin-top:2px;
+		margin-left:5px;
+	}
+	#content
+	{
+		background-color:window;
+		width:100%%; 
+		height:100%%; 
+	}
+	#topbar widget[type="button"] 
+	{
+		width:16px;
+		height:16px;
+		margin-top:2px;
+		background-repeat:no-repeat;
+	}
+	
+	#topbar widget[type="button"]:hover 
+	{} 
+	#topbar widget[type="button"]:active 
+	{} 
+	
+	#topbar #minimize
+	{ 
+	    padding-left:-6px;
+	    background-image:url(../minimize_pas.gif);
+	} 
+	
+	#topbar #minimize:active
+	{ 
+	    background-image:url(../minimize_push.gif);
+	} 
+
+	#topbar #minimize:hover
+	{ 
+	    background-image:url(../minimize_act.gif);
+	} 
+	
+	#topbar #close
+	{ 
+	    padding-left:-4px;
+	    background-image:url(../close_pas.gif);
+	} 
+
+	#topbar #close:active
+	{ 
+	    background-image:url(../close_push.gif);
+	} 
+	
+	#topbar #close:hover
+	{ 
+	    background-image:url(../close_act.gif);
+	} 
+
+	#topbar #icon 
+	{
+	    margin-left:5px;
+	}
+
+	#TheForm 
+    { 
+        font: 9pt;
+        font-family: Tahoma, Verdana, Arial;
+        color: #FFFFFF;
+        border-color: #FFFFFF;
+    }
+    #TheLegend 
+    { 
+        font: 9pt;  
+        font-family: Tahoma, Verdana, Arial;
+        color: #FFFFFF;
+        font-weight:bold;
+    }
+    
+	.custom-button 
+	{
+	    background-image: url(../button_back.gif);
+		background-repeat: expand stretch-top stretch-left stretch-right stretch-bottom stretch-middle; /* h-smile specific */
+		background-position: 4px 4px 4px 4px;		
+		font-family: Tahoma, Verdana, Arial;
+		font-weight: normal;
+        color: #000;
+        behavior:button;
+        transition:blend;
+	    width: 70px;
+		height: 21px;
+	    text-align:center;
+	    margin:2px;
+        padding:2px;
+	}
+	
+	.custom-button:hover 
+	{
+		background-image: url(../button_back_hover.gif);
+	}
+	
+	.custom-button:active 
+	{
+		background-image: url(../button_back_active.gif);
+        padding:3px 1px 1px 3px;
+	}
+
+	.custom-button:disabled
+	{
+        color: graytext;
+	}
+	
+	.custom-button-flat 
+	{
+	    font-family: Tahoma, Verdana, Arial;
+	    font-weight: bold;
+        color: #000;
+        behavior:button;
+        transition:blend;
+		color: black;
+	    width: 70px;
+		height: 13px;
+	    text-align:center;
+	    margin:2px;
+        padding:2px;
+        border:4px solid threedshadow;
+        background-color: threedface;
+        background-image: none;
+	}
+	
+	.custom-button-flat:hover 
+	{
+        background-color: threedhighlight;
+	}
+	
+	.custom-button-flat:active 
+	{
+		background-color: threedlightshadow;
+        padding:3px 1px 1px 3px;
+	}
+	
+	b#infobold
+	{
+	    font: 12pt;
+        font-family: Tahoma, Verdana, Arial;
+        color: #FFFFFF;
+        font-weight:bold;
+	}
+	
+	b#infotext
+	{
+	    font: 9pt;  
+        font-family: Arial;
+        color: #FFFFFF;
+        font-weight: normal;
+	}
+	
+	b#ActiveWindowCaption
+	{
+	    font: 8pt;  
+        font-family: Arial;
+        color: #FFFFFF;
+        font-weight: normal;
+        text-align:justify;
+	}
+	
+	#ConversionProgress
+	{
+        display: none;
+        width: 200px;
+        margin-top: 10px;
+        margin-left: *;
+        margin-right: *;
+	}
+	
+/*	widget
+	{
+		background-color:red
+	}*/
+	</style>
+</head>
+<body>
+    <div id="topbar">
+        <div id="caption"></div>
+        <widget id="minimize" type="button"></widget>
+        <widget id="close" type="button"></widget>
+    </div>
+    <TABLE cellpadding="2" cellspacing="2" width="100%" height="100%" border="0">
+		<TR>
+			<TD height="5" colspan="2"></TD>
+		</TR>
+
+		<TR>
+			<TD height="23" width="100%">
+                <TABLE cellpadding="0" cellspacing="0" width="100%" height="100%">
+                    <TR height="100%">
+                        <TD class="custom-button" id="Open">
+                            &nbsp;Open...&nbsp;
+                        </TD>
+                        <TD width="5"></TD>
+                        <TD class="custom-button" id="Save" disabled title="Click with Shift for Save As functionality">
+                            &nbsp;Save&nbsp;
+                        </TD>
+                        <TD width="5"></TD>
+                        <TD class="custom-button" id="Preview" disabled>
+                            Preview
+                        </TD>
+                        <TD width="5"></TD>
+                        <TD class="custom-button" id="ConvertToFLV" disabled>
+                            &nbsp;Make&nbsp;Flash&nbsp;Video&nbsp;
+                        </TD>
+						<TD width="100%"></TD>
+                        <TD class="custom-button" id="Publish" disabled>
+                            Publish!
+                        </TD>
+                    </TR>
+                </TABLE>
+			</TD>
+
+			<TD rowspan="2" width="250">
+                <TABLE cellpadding="1" cellspacing="1" width="250" height="100%">
+                    <TR height="100%"><TD valign="top">
+						<b id="infobold">Edit, Preview and Publish</b><br><br>
+						<b id="infotext">•&nbsp;Click 'Add Interval' to edit selected frames.</b><br>
+						<b id="infotext">•&nbsp;Set interval options for text, sound, and camera.</b><br>
+						<b id="infotext">•&nbsp;'Preview', and 'Make Flash Video' to save FLV file.</b><br>
+						<b id="infotext">•&nbsp;Click 'Publish' to upload your recording.</b><br><br>
+                    </TD></TR>
+                    <TR><TD>
+                        <fieldset id="TheForm">
+                            <legend id="TheLegend">Interval Options</legend>
+                            <br>
+                            <center>
+								<TABLE cellpadding="1" cellspacing="1" width="250" border="0">
+									<TR>
+										<TD width="20"></TD>
+										<TD colspan="5">
+											<TABLE cellpadding="0" cellspacing="0" height="23">
+												<TR>
+													<TD class="custom-button" id="AddText" disabled>
+														&nbsp;Add Text&nbsp;
+													</TD>
+												</TR>
+											</TABLE>
+										</TD>
+									</TR>
+									<TR height="10">
+										<TD colspan="6">&nbsp;</TD>
+									</TR>
+									<TR>
+										<TD width="20"></TD>
+										<TD width="140" height="140">
+											<widget id="webcamControl" width="100%" height="100%" disabled></widget>
+										</TD>
+										<TD width="10"></TD>
+										<TD width="100%"></TD>
+											<TABLE cellpadding="1" cellspacing="1" width="100%" height="23" border=0>
+												<TD height="100%"><TD></TD></TR>
+												<TR height="23">
+													<TD class="custom-button" id="SoundControl" disabled>&nbsp;Sound&nbsp;Off&nbsp;</TD>
+												</TR>
+												<TD height="10"><TD></TD></TR>
+												<TR height="23">
+													<TD class="custom-button" id="WebcamControl" disabled>&nbsp;Camera&nbsp;Off&nbsp;</TD>
+												</TR>
+												<TD height="100%"><TD></TD></TR>
+											</TABLE>
+										</TD>
+										<TD width="20"></TD>
+									</TR>
+								</TABLE>
+                            </center>
+                            <br>
+                        </fieldset>
+                    </TD></TR>
+                </TABLE>
+			</TD>
+		</TR>
+		
+		<TR>
+			<TD height="360">
+				<widget id="videoPreview" width="100%" height="99%" style="margin:*"></widget>
+                <TABLE cellpadding="1" cellspacing="1" width="100%" id="StatusReporter" style="display:none">
+                    <TR height="255" valign="top" align="center">
+                        <TD align="top">
+                            <b id="ConversionMessage" style="color:white">Converting AVI to FLV, please wait...</b>
+                            <br>
+                            <b id="infobold">Press Esc to cancel.</b>
+                            <br>
+                            <widget id="ConversionProgress" type="progress" maxvalue="100" style="display:none"></widget>
+                        </TD>
+                    </TR>
+                </TABLE>
+			</TD>
+		</TR>
+		
+		<TR>
+			<TD height="35" colspan="2"><widget id="timeline" width="100%" height="99%" style="margin:*"></widget></TD>
+		</TR>
+		
+		<TR>
+			<TD height="25" colspan="2">
+				<TABLE cellpadding="0" cellspacing="0" width="100%" height="100%">
+					<TR>
+						<TD class="custom-button" id="PreviousFrame" disabled>
+							&nbsp;&laquo;&nbsp;Frame&nbsp;
+						</TD>
+						<TD width="5"></TD>
+						<TD class="custom-button" id="NextFrame" disabled>
+							&nbsp;Frame&nbsp;&raquo;&nbsp;
+						</TD>
+						<TD width="15"></TD>
+						<TD class="custom-button" id="AddInterval" disabled>
+							&nbsp;Add&nbsp;Interval&nbsp;
+						</TD>
+						<TD width="5"></TD>
+						<TD class="custom-button" id="DeleteInterval" disabled>
+							&nbsp;Delete&nbsp;Interval&nbsp;
+						</TD>
+						<TD width="100%"></TD>
+						<TD class="custom-button" id="DeleteContent" style="width:120px" disabled>
+							&nbsp;Delete Content&nbsp;
+						</TD>
+					</TR>
+				</TABLE>
+			</TD>
+		</TR>
+		
+		<TR>
+			<TD height="100%" colspan="2"></TD>
+		</TR>
+		
+		<TR>
+			<TD height="5" colspan="2"></TD>
+		</TR>
+    </TABLE>
+</body>
+</html>

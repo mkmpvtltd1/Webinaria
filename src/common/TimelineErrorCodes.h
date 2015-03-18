@@ -1,0 +1,3 @@
+#pragma once
+
+#define E_NOMOREOVERLAYS MAKE_HRESULT(1, FACILITY_NULL, 0x1980)

@@ -1,0 +1,3 @@
+#define OutputFolder ".."
+#define OutputBaseName "setup"
+#define Bin ".\bin"

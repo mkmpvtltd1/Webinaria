@@ -1,0 +1,1 @@
+msiexec.exe /uninstall {6278C5A8-152B-49E6-AFD2-080BBEF796C8}

@@ -1,0 +1,3 @@
+#define OutputFolder "..\..\bin"
+#define OutputBaseName "WebinariaSetup"
+#define Bin "..\..\bin"

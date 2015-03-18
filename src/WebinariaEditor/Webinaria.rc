@@ -1,0 +1,234 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_WEBINARIA_ICON      ICON                    "app.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WEBCAM_CONTROL DIALOGEX 0, 0, 50, 50
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_CONVERSION_QUALITY DIALOGEX 0, 0, 188, 77
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Make Flash Video File"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,77,56,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,131,56,50,14
+    LTEXT           "&File quality:",IDC_STATIC,7,34,38,8
+    COMBOBOX        IDC_QUALITY,49,32,132,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Please select the output file quality. NOTE: Higher quality = larger file.",IDC_STATIC,7,7,174,20
+END
+
+IDD_TEXT_ELEMENT_EDITOR DIALOGEX 0, 0, 211, 115
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Edit Text"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_TEXT_ELEMENT_TEXT,7,7,197,14,ES_AUTOHSCROLL
+    GROUPBOX        "&Align:",IDC_STATIC,7,25,197,29
+    CONTROL         "&Left",IDC_TEXT_ELEMENT_ALIGN_LEFT,"Button",BS_AUTORADIOBUTTON,38,37,29,10
+    CONTROL         "&Center",IDC_TEXT_ELEMENT_ALIGN_CENTER,"Button",BS_AUTORADIOBUTTON,84,37,38,10
+    CONTROL         "&Right",IDC_TEXT_ELEMENT_ALIGN_RIGHT,"Button",BS_AUTORADIOBUTTON,140,37,33,10
+    COMBOBOX        IDC_TEXT_ELEMENT_FONT_NAME,7,63,140,50,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "C&olor...",IDC_TEXT_ELEMENT_COLOR,154,62,50,14
+    CONTROL         "",IDC_TEXT_ELEMENT_FONT_SIZE,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,46,84,120,24
+    LTEXT           "Smaller",IDC_STATIC,11,87,24,8
+    LTEXT           "Larger",IDC_STATIC,177,87,22,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CAMERA              BITMAP                  "res\\camera-video.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 2,0,0,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Charlwood eMarketing"
+            VALUE "FileDescription", "Webinaria Editor"
+            VALUE "FileVersion", "2, 0, 0, 0"
+            VALUE "InternalName", "Editor"
+            VALUE "LegalCopyright", "Copyright (C) 2007-8, Charlwood eMarketing"
+            VALUE "OriginalFilename", "WebinariaEditor.exe"
+            VALUE "ProductName", "Webinaria"
+            VALUE "ProductVersion", "2, 0, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_CONVERSION_QUALITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 70
+    END
+
+    IDD_TEXT_ELEMENT_EDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CONVERSION_QUALITY DLGINIT
+BEGIN
+    IDC_QUALITY, 0x403, 15, 0
+0x6f4c, 0x2077, 0x3228, 0x3030, 0x6b20, 0x7062, 0x2973, "\000" 
+    IDC_QUALITY, 0x403, 18, 0
+0x654d, 0x6964, 0x6d75, 0x2820, 0x3034, 0x2030, 0x626b, 0x7370, 0x0029, 
+
+    IDC_QUALITY, 0x403, 16, 0
+0x6948, 0x6867, 0x2820, 0x3037, 0x2030, 0x626b, 0x7370, 0x0029, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_OVERLAY_MENU MENU 
+BEGIN
+    POPUP "Overlay Menu"
+    BEGIN
+        MENUITEM "P&roperties",                 ID_OVERLAYMENU_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "&Delete",                     ID_OVERLAYMENU_DELETE
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

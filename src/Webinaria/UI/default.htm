@@ -1,0 +1,647 @@
+<html>
+<head>
+    <style>
+	html 
+	{ 
+		font:13pt; 
+		font-family:  Arial;
+		overflow:hidden;
+	}
+	body 
+	{ 
+		padding:3px;
+		margin-left:0px;
+		background-color:#B8B8B8;
+		background-image:url(images/back.png);
+		background-repeat:repeat;
+		background-position:100% 0%;
+		width:100%%; 
+		height:100%%; 
+	}
+
+	#topbar
+	{
+		flow:horizontal;
+		margin-bottom:3px;
+	}
+
+	#topbar #caption 
+	{
+		color: #FFFFFF;
+		font-family: Tahoma, Verdana, Arial;
+		font-size:8pt;
+		font-weight: bold;
+		margin-top:3px;
+		margin-left:5px;
+	}
+	#content
+	{
+		background-color:window;
+		width:100%%; 
+		height:100%%; 
+	}
+	#topbar widget[type="button"] 
+	{
+		width:16px;
+		height:16px;
+		margin-top:2px;
+		background-repeat:no-repeat;
+	}
+	
+	#topbar widget[type="button"]:hover 
+	{} 
+	#topbar widget[type="button"]:active 
+	{} 
+	
+	#topbar #minimize
+	{ 
+	    padding-left:-6px;
+	    background-image:url(../minimize_pas.gif);
+	} 
+	
+	#topbar #minimize:active
+	{ 
+	    background-image:url(../minimize_push.gif);
+	} 
+
+	#topbar #minimize:hover
+	{ 
+	    background-image:url(../minimize_act.gif);
+	} 
+	
+	#topbar #close
+	{ 
+	    padding-left:-4px;
+	    background-image:url(../close_pas.gif);
+	} 
+
+	#topbar #close:active
+	{ 
+	    background-image:url(../close_push.gif);
+	} 
+	
+	#topbar #close:hover
+	{ 
+	    background-image:url(../close_act.gif);
+	} 
+
+	#topbar #icon 
+	{
+	    margin-left:5px;
+	}
+
+	#bottombar
+	{
+		flow:horizontal;
+		font-size:10px;
+		padding-left:1px;
+	}
+
+	.tabs
+    {
+      margin-top:61px;
+      font-family: Tahoma, Verdana, Arial;
+      behavior:tabs;
+      height:100%%;
+      width:100%%;
+      overflow:hidden;
+      flow: vertical;
+    }
+
+    .tabs > .strip /* tab strip */
+    {
+      margin-top:13px;
+      margin-left:2px;
+      background-image:none;
+    }
+    
+    .tabs > #second.strip /* tab strip */
+    {
+      margin-top:-25px;
+      margin-left:99px;
+      background-image:none;
+    }
+    
+    .tabs > #third.strip /* tab strip */
+    {
+      margin-top:-25px;
+      margin-left:184px;
+      background-image:none;
+    }
+    
+    .tabs > #fourth.strip /* tab strip */
+    {
+      margin-top:-25px;
+      margin-left:268px;
+      background-image:none;
+    }
+    
+    /*///////////////////////////////////////////////////////*/
+
+    .tabs .strip [panel]
+    {
+      height: 25px;
+      width:  97px;
+      background-image:url(images/tabs/record_pas.gif);
+    }
+       
+    .tabs .strip [panel]:hover /* passive tab */
+    {
+      background-image:url(images/tabs/record_pas.gif);
+    }
+    
+    .tabs .strip [panel]:current  /*active tab*/
+    {
+      background-image:url(images/tabs/record_act.gif);
+    }
+    
+    .tabs .strip [panel]:current:hover /*active tab*/
+    {
+      background-image:url(images/tabs/record_act.gif);
+    }
+
+    .tabs:focus .strip [panel]:current /*active tab*/
+    {
+      background-image:url(images/tabs/record_act.gif);
+    }
+
+    /*///////////////////////////////////////////////////////*/
+    
+    .tabs #second.strip [panel]
+    {
+      height: 25px;
+      width:  85px;
+      background-image:url(images/tabs/hardware_pas.gif);
+    }
+       
+    .tabs #second.strip [panel]:hover /* passive tab */
+    {
+      background-image:url(images/tabs/hardware_pas.gif);
+    }
+    
+    .tabs #second.strip [panel]:current  /*active tab*/
+    {
+      background-image:url(images/tabs/hardware_act.gif);
+    }
+    
+    .tabs #second.strip [panel]:current:hover /*active tab*/
+    {
+      background-image:url(images/tabs/hardware_act.gif);
+    }
+
+    /*///////////////////////////////////////////////////////*/
+    
+    .tabs #third.strip [panel]
+    {
+      height: 25px;
+      width:  84px;
+      background-image:url(images/tabs/options_pas.gif);
+    }
+       
+    .tabs #third.strip [panel]:hover /* passive tab */
+    {
+      background-image:url(images/tabs/options_pas.gif);
+    }
+    
+    .tabs #third.strip [panel]:current  /*active tab*/
+    {
+        background-image:url(images/tabs/options_act.gif);
+     }
+    
+    .tabs #third.strip [panel]:current:hover /*active tab*/
+    {
+        background-image:url(images/tabs/options_act.gif);
+    }
+
+    /*///////////////////////////////////////////////////////*/
+    
+    .tabs #fourth.strip [panel]
+    {
+        height: 25px;
+        width:  97px;
+        background-image:url(images/tabs/help_pas.gif);
+    }
+       
+    .tabs #fourth.strip [panel]:hover /* passive tab */
+    {
+        background-image:url(images/tabs/help_pas.gif);
+    }
+    
+    .tabs #fourth.strip [panel]:current  /*active tab*/
+    {
+        background-image:url(images/tabs/help_act.gif);
+     }
+    
+    .tabs #fourth.strip [panel]:current:hover /*active tab*/
+    {
+        background-image:url(images/tabs/help_act.gif);
+    }
+
+    /*///////////////////////////////////////////////////////*/
+
+
+    .tabs > [name]
+    {
+        display:none;
+    }
+    
+    .tabs > [name]:expanded 
+    {
+        font:11pt;
+        font-family:Tahoma, Verdana, Arial;
+        background-image:url(images/tab_back.gif);
+        background-repeat:no-repeat;
+        margin-top: 0px;
+        margin-left:1px;
+        display:block;
+    }
+    
+    #TheForm 
+    { 
+        font: 9pt;
+        font-family: Tahoma, Verdana, Arial;
+        color: #FFFFFF;
+        border-color: #FFFFFF;
+    }
+    #TheLegend 
+    { 
+        font: 9pt;  
+        font-family: Tahoma, Verdana, Arial;
+        color: #FFFFFF;
+        font-weight:bold;
+    }
+	
+	.custom-button 
+	{
+	    background-image: url(../button_back.gif);
+		background-repeat: expand stretch-top stretch-left stretch-right stretch-bottom stretch-middle; /* h-smile specific */
+		background-position: 4px 4px 4px 4px;		
+		font-family: Tahoma, Verdana, Arial;
+		font-weight: normal;
+        color: #000;
+        behavior:button;
+        transition:blend;
+	    width: 70px;
+		height: 23px;
+	    text-align:center;
+	    vertical-align: middle;
+	    margin:2px;
+        padding:2px;
+	}
+	
+	.custom-button:disabled
+	{
+        color: graytext;
+	}
+	
+	.custom-button:hover 
+	{
+		background-image: url(../button_back_hover.gif);
+	}
+	
+	.custom-button:active 
+	{
+		background-image: url(../button_back_active.gif);
+        padding:3px 1px 1px 3px;
+	}
+	
+	.custom-button-flat 
+	{
+	    font-family: Tahoma, Verdana, Arial;
+	    font-weight: bold;
+        color: #000;
+        behavior:button;
+        transition:blend;
+		color: black;
+	    width: 70px;
+		height: 13px;
+	    text-align:center;
+	    margin:2px;
+        padding:2px;
+        border:4px solid threedshadow;
+        background-color: threedface;
+        background-image: none;
+	}
+	
+	.custom-button-flat:hover 
+	{
+        background-color: threedhighlight;
+	}
+	
+	.custom-button-flat:active 
+	{
+		background-color: threedlightshadow;
+        padding:3px 1px 1px 3px;
+	}
+	
+	b#infobold
+	{
+	    font: 12pt;  
+        font-family: Tahoma, Verdana, Arial;
+        color: #FFFFFF;
+        font-weight:bold;
+	}
+	
+	b#infotext
+	{
+	    font: 9pt;  
+        font-family: Arial;
+        color: #FFFFFF;
+        font-weight: normal;
+	}
+	
+	b#addintext
+	{
+	    font: 8pt;  
+        font-family: Arial;
+        color: #222222;
+        font-weight: normal;
+        text-align:justify;
+	}
+	
+	b#ActiveWindowCaption
+	{
+	    font: 8pt;  
+        font-family: Arial;
+        color: #FFFFFF;
+        font-weight: normal;
+        text-align:justify;
+	}
+	
+	</style>
+</head>
+<body>
+    <div id="topbar">
+        <div id="caption"></div>
+        <widget id="minimize" type="button"></widget>
+        <widget id="close" type="button"></widget>
+    </div>
+    <div class="tabs">
+        <div class="strip">
+            <div panel="_rec" selected>
+            </div>
+        </div>
+        <div id="second" class="strip">
+            <div panel="_hrd">
+            </div>
+        </div>
+        <div id="third" class="strip">
+            <div panel="_opt">
+            </div>
+        </div>
+        <div id="fourth" class="strip">
+            <div panel="_hlp">
+            </div>
+        </div>
+        <div name="_rec" selected align="justify">
+			<center>
+				<TABLE cellpadding="1" cellspacing="1" width="95%">
+				<TR><TD height="5px">
+				   &nbsp;
+				</TD></TR>
+				<TR><TD>
+				   <b id="infobold">Quick Start Guide</b>
+				</TD></TR>
+				<TR><TD>
+				   <b id="infotext">•&nbsp;To record your active window with audio, click 'Record'.</b><br>
+				</TD></TR>
+				<TR><TD>
+				   <b id="infotext">•&nbsp;Right click the flashing icon in system tray to 'Stop/Pause'.</b><br>
+				</TD></TR>
+				<TR><TD>
+				   <b id="infotext">•&nbsp;Adjust microphone sound settings using 'Hardware' tab.</b><br>
+				</TD></TR>
+				<TR><TD height="10px">
+				   &nbsp;
+				</TD></TR>
+				<TR><TD>
+				   <b id="infobold">Hot Keys</b>
+				</TD></TR>
+				<TR><TD>
+				   <b id="infotext">•&nbsp;Record/Resume = Win-Alt-R.</b><br>
+				</TD></TR>
+				<TR><TD>
+				   <b id="infotext">•&nbsp;Pause = Win-Alt-P.</b><br>
+				</TD></TR>
+				<TR><TD>
+				   <b id="infotext">•&nbsp;Stop = Win-Alt-S.</b><br>
+				</TD></TR>
+				<TR><TD height="15px">
+				   &nbsp;
+				</TD></TR>
+				<TR><TD>
+				   <b id="infotext">Click 'Help' to view our forum or check for updates.</b><br>
+				</TD></TR>
+				<TR><TD height="15px">
+				   &nbsp;
+				</TD></TR>
+				</TABLE>
+            <TABLE cellpadding="1" cellspacing="1">
+                <TR>
+                    <TD  align="center" width="260" class="custom-button" id="Record">
+                        Record
+                    </TD>
+                    <TD width="5"></TD>
+                    <TD  align="center" width="260" class="custom-button" id="Pause" disabled>
+                        Pause
+                    </TD>
+                    <TD width="5"></TD>
+                    <TD  align="center" width="260" class="custom-button" id="Stop" disabled>
+                        Stop
+                    </TD>
+                </TR>
+                <TR>
+					<TD colspan="5" height="5px">&nbsp;</TD>
+                </TR>
+                <TR>
+					<TD colspan="5" align="center" style="color: white"><input type="checkbox" id="HideWindowWhenRecording" checked>Hide window when recording</TD>
+                </TR>
+            </TABLE>
+            </center>
+        </div>
+        <div name="_hrd" id="Hardware">        
+            <TABLE cellpadding="1" cellspacing="1" width="95%">
+                <TR height=12><TD></TD></TR>
+                <TR>
+                    <TD width=12></TD>
+                    <TD></TD>
+                    <fieldset id="TheForm">
+		                <legend id="TheLegend">Web camera</legend>
+		                    <TABLE cellpadding="1" cellspacing="1" width="100%">
+		                        <TR height="4"><TD></TD></TR>
+		                        <TR height="25">
+		                            <TD width="9"></TD>
+		                            <TD width="98">Device:</TD>
+		                            <TD width="150">
+		                                <a id="Device">
+		                                    <!--<OPTION value="Default">Microsoft WDM Image</OPTION>-->
+		                                </a>
+		                            </TD>
+		                        </TR>
+                                <TR height="4"><TD></TD></TR>
+                            </TABLE>
+                            <TABLE cellpadding="1" cellspacing="1" width="100%">
+                                <TR height="20">
+                                    <TD width="115"></TD>
+                                    <TD class="custom-button" id="Source">
+                                        Source
+                                    </TD>
+                                    <TD width="65"></TD>
+                                </TR>
+                                <TR height="4"><TD></TD></TR>
+                            </TABLE>
+		            </fieldset>
+                </TR>
+                <TR height=2><TD></TD></TR>
+                <TR>
+                    <TD></TD>
+                    <TD></TD>
+                    <fieldset id="TheForm">
+		                <legend id="TheLegend">Sound</legend>
+		                    <TABLE cellpadding="1" cellspacing="1" width="100%">
+		                        <TR height="4"><TD></TD></TR>
+		                        <TR height="25">
+		                            <TD width="9"></TD>
+		                            <TD width="98">Sound device:</TD>
+		                            <TD width="150">
+		                                <a id="SoundDevice">
+		                                <!--<OPTION value="Microphone">Microphone</OPTION>-->
+		                                </a>
+		                            </TD>
+		                            <TD></TD>
+		                        </TR>
+                                <TR height="4"><TD></TD></TR>
+                            </TABLE>
+                            <TABLE cellpadding="1" cellspacing="1" width="100%">
+                                <TR height="20">
+                                    <TD width="115"></TD>
+                                    <TD  align="center" width="260" class="custom-button" id="SoundTest">
+                                        &nbsp;Properties&nbsp;
+                                    </TD>
+                                </TR>
+                                <TR height="4"><TD></TD></TR>
+                            </TABLE>
+		            </fieldset>
+                </TR>
+		    </TABLE>
+        </div>
+        <div name="_opt">
+            <TABLE cellpadding="1" cellspacing="1" width="95%">
+                <TR height=12><TD></TD></TR>
+                <TR>
+                    <TD width=12></TD>
+                    <TD></TD>
+                    <fieldset id="TheForm">
+		                <legend id="TheLegend">Record source</legend>
+		                    <TABLE cellpadding="1" cellspacing="1" width="100%">
+		                        <TR>
+		                            <TD width=2></TD>
+		                            <TD><input type="checkbox" id="Narration" checked>Record audio narration</TD>
+		                        </TR>
+                                <TR>
+                                    <TD></TD>
+                                    <TD><input type="checkbox" id="Webcam">Record webcam video</TD>
+                                </TR>
+                                <!--<TR>
+                                    <TD></TD>
+                                    <TD><input type="checkbox" id="DeleteBackgound" checked disabled>Make webcam background transparent</TD>
+                                </TR>-->
+                                <TR height="2">
+                                    <TD></TD>
+                                </TR>
+                            </TABLE>
+		            </fieldset>
+                </TR>
+                <TR height=0><TD></TD></TR>
+                <TR>
+                    <TD></TD>
+                    <TD></TD>
+                    <fieldset id="TheForm">
+		                <legend id="TheLegend">Capture area</legend>
+		                    <TABLE cellpadding="1" cellspacing="1" width="100%">
+		                        <TR>
+		                            <TD width="2"></TD>
+		                            <TD><input type="radio" name="CaptureArea" id="Screen">Entire screen</TD>
+		                        </TR>
+                                <TR>
+                                    <TD></TD>
+									<TD width="100%"><input type="radio" name="CaptureArea" id="Window" checked>Window:&nbsp;<span id="ActiveWindowCaption">"..."</span></TD>
+                                </TR>
+                                <TR>
+                                    <TD></TD>
+                                    <TD><input type="radio" name="CaptureArea" id="Custom" style="overflow:hidden">Custom:&nbsp;<span id="CustomAreaInfo" style="white-space:nowrap; overflow:hidden">...<span></TD>
+                                </TR>
+                                <TR>
+                                    <TD></TD>
+									<TD><div align="center" width="260" class="custom-button" id="SelectRegion" title="Select region to capture">Select</div></TD>
+                                </TR> 
+                                <TR height="2">
+                                    <TD></TD>
+                                    <td></td>
+                                </TR>
+                            </TABLE>
+		            </fieldset>
+                </TR>
+                <TR height=1><TD></TD></TR>
+                <TR>
+                    <TD></TD>
+                    <TD></TD>
+                    <fieldset id="TheForm">
+		                <legend id="TheLegend">File options</legend>
+		                    <TABLE cellpadding="1" cellspacing="0" width="95%" border=0>
+		                        <TR height="1">
+                                    <TD></TD>
+                                </TR>
+		                        <TR>
+                                    <TD width="10"></TD>
+                                    <TD width="81" valign="top">Frame rate:</TD>
+                                    <TD width="70">
+										<select type="select-dropdown" id="FrameRate">
+											<option value="15">High (15 fps)</option>
+											<option value="10">Medium (10 fps)</option>
+											<option value="5" selected>Standard (5 fps)</option>
+										</select>
+										<br>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+		            </fieldset>
+                </TR>
+		    </TABLE>
+        </div>
+        <div name="_hlp">
+            <TABLE cellpadding="1" cellspacing="0" width="95%">
+                <TR height=100><TD width=125></TD><TD width="100"></TD></TR>
+                <TR height="30">
+                    <TD></TD>
+                    <TD class="custom-button" id="Forum">
+                        <center>Help Forum</center>
+                    </TD>
+                </TR>
+            </TABLE>
+            <TABLE cellpadding="1" cellspacing="0" width="95%">
+                <TR height=40><TD width=100></TD><TD width="150"></TD></TR>
+                <TR height="30">
+                    <TD></TD>
+                    <TD class="custom-button" id="Updates">
+                        Check for Updates
+                    </TD>
+                </TR>
+            </TABLE>
+            <TABLE cellpadding="1" cellspacing="0" width="95%">
+                <TR height=40><TD width=100></TD><TD width="150"></TD></TR>
+                <TR height="30">
+                    <TD></TD>
+                    <TD class="custom-button" id="Unlock">
+                        Unlock
+                    </TD>
+                </TR>
+            </TABLE>
+        </div>
+    </div>
+    
+    <div id="bottombar">
+		<span id="statusbar">...</span>
+    </div>
+</body>
+</html>

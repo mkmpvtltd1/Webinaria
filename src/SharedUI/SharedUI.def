@@ -1,0 +1,6 @@
+; SharedUI.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SharedUI"
+
+EXPORTS
+    ; Explicit exports can go here

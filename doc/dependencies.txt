@@ -1,0 +1,27 @@
+To build solution you will need:
+===============================
+I) Latest Windows Vista SDK
+http://www.microsoft.com/downloads/details.aspx?familyid=C2B1E300-F358-4523-B479-F53D234CDCCF&displaylang=en
+
+II) Latest DirectX SDK
+http://www.microsoft.com/downloads/details.aspx?familyid=86cf7fa2-e953-475c-abde-f016e4f7b61a&displaylang=en
+
+It's absolutely possible that solution will compile with previous SDKs versions, but latest are recommended.
+
+After completing SDKs installation, you will need to setup IDE's Tools -> Options -> Projects and Solutions -> VC++ Directories:
+1) Include files: replace current path to Windows SDK includes with path to Windows Vista SDK includes, add path to DirectX SDK includes.
+2) Library files: replace current path to Windows SDK libs with path to Windows Vista SDK libs, add path to DirectX SDK libs.
+3) Executable files: replace current path to Windows SDK bins with path to Windows Vista SDK bins.
+
+Solution uses BaseClasses sample headers and library from Windows SDK (Samples\Multimedia\DirectShow\BaseClasses). Headers and compiled library reside in lib\DirectShowBaseClasses, so you will not need to rebuild SDK sample. Additional includes and libraries paths point to lib\DirectShowBaseClasses.
+
+III) Run src\SetupEnvironment.cmd script to get all files needed to build, run and debug the project.
+
+To create setup package you will need:
+===========================================================
+I) Inno Setup 5.x or later, installed from Inno Setup Quick Start Pack (make sure ISPP is being installed).
+http://www.jrsoftware.org/isdl.php#qsp
+
+Batch Release Build
+===================
+In order to build and package release version of Webinaria in one step, run src\Release.cmd script. Please note that SetupEnvironment.cmd script must be executed prior to building Webinaria for the first time.

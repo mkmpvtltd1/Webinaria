@@ -1,0 +1,218 @@
+<html>
+<head>
+    <style>
+	html 
+	{ 
+		font:10pt; 
+		font-family:  Arial;
+		overflow:hidden;
+	}
+	body 
+	{ 
+		padding:3px;
+		margin-left:0px;
+		background-color:#2570ab;
+		background-image:url(images/p_back.png);
+		background-repeat:repeat-x;
+		border-left:1px solid #DD5F5D;
+		border-bottom:1px solid #DD5F5D;
+		border-right:1px solid #DD5F5D; 
+		width:100%%; 
+		height:100%%; 
+	}
+
+	#topbar
+	{
+		flow:horizontal;
+		margin-bottom:3px;
+	}
+
+	#topbar #caption 
+	{
+		color: #FFFFFF;
+		font-family: Tahoma, Verdana, Arial;
+		font-size:10pt;
+		font-weight: bold;
+		margin-top:2px;
+		margin-left:5px;
+	}
+	#content
+	{
+		background-color:window;
+		width:100%%; 
+		height:100%%; 
+	}
+	#topbar widget[type="button"] 
+	{
+		width:16px;
+		height:16px;
+		margin-top:2px;
+		background-repeat:no-repeat;
+	}
+	
+	#topbar widget[type="button"]:hover 
+	{} 
+	#topbar widget[type="button"]:active 
+	{} 
+	
+	#topbar #minimize
+	{ 
+	    padding-left:-6px;
+	    background-image:url(../minimize_pas.gif);
+	} 
+	
+	#topbar #minimize:active
+	{ 
+	    background-image:url(../minimize_push.gif);
+	} 
+
+	#topbar #minimize:hover
+	{ 
+	    background-image:url(../minimize_act.gif);
+	}
+	
+	#topbar #maximize
+	{ 
+	    padding-left:-6px;
+	    background-image:url(../maximize_pas.gif);
+	} 
+	
+	#topbar #maximize:active
+	{ 
+	    background-image:url(../maximize_push.gif);
+	} 
+
+	#topbar #maximize:hover
+	{ 
+	    background-image:url(../maximize_act.gif);
+	} 
+	
+	#topbar #close
+	{ 
+	    padding-left:-4px;
+	    background-image:url(../close_pas.gif);
+	} 
+
+	#topbar #close:active
+	{ 
+	    background-image:url(../close_push.gif);
+	} 
+	
+	#topbar #close:hover
+	{ 
+	    background-image:url(../close_act.gif);
+	} 
+
+	#topbar #icon 
+	{
+	    margin-left:5px;
+	}
+
+    #back
+    {
+        background-repeat:repeat;
+        background-position: 6px 6px 6px -1px;
+    }
+    
+	.custom-button 
+	{
+	    width: 70px;
+		height: 13px;
+	    background-image: url(../button_back.gif);
+		background-repeat: expand stretch-top stretch-left stretch-right stretch-bottom stretch-middle; /* h-smile specific */
+		background-position: 4px 4px 4px 4px;		
+		/*font: 8pt;*/
+		font-family: Tahoma, Verdana, Arial;
+		font-weight: normal;
+        color: #000;
+        behavior:button;
+        transition:blend;
+	    text-align:center;
+	    margin:2px;
+        padding:2px;
+	}
+	
+	.custom-button:hover 
+	{
+		background-image: url(../button_back_hover.gif);
+	}
+	
+	.custom-button:active 
+	{
+		background-image: url(../button_back_active.gif);
+        padding:3px 1px 1px 3px;
+	}
+
+	.custom-button:disabled
+	{
+        color: graytext;
+	}
+	
+	.custom-button-flat 
+	{
+	    font-family: Tahoma, Verdana, Arial;
+	    font-weight: bold;
+        color: #000;
+        behavior:button;
+        transition:blend;
+		color: black;
+	    width: 70px;
+		height: 23px;
+	    text-align:center;
+	    margin:2px;
+        padding:2px;
+        border:4px solid threedshadow;
+        background-color: threedface;
+        background-image: none;
+	}
+	
+	.custom-button-flat:hover 
+	{
+        background-color: threedhighlight;
+	}
+	
+	.custom-button-flat:active 
+	{
+		background-color: threedlightshadow;
+        padding:3px 1px 1px 3px;
+	}
+	</style>
+</head>
+<body>
+    <div id="topbar">
+        <div id="caption"></div>
+        <widget id="minimize" type="button"></widget>
+        <widget id="maximize" type="button"></widget>
+        <widget id="close" type="button"></widget>
+    </div>
+    <TABLE cellpadding="1" cellspacing="1" width="100%" height="100%">
+        <TR height="5">
+            <TD colspan="7"></TD>
+        </TR>
+        <TR height="100%">
+            <TD colspan="7" width="100%" height="100%"><widget type="custom" width="100%" height="100%" id="VideoPreview"></widget></TD>
+        </TR>
+        <TR height="5">
+            <TD colspan="7"></TD>
+        </TR>
+        <TR height="23" valign="middle">
+            <TD width="100%"></TD>
+            <TD width="60" class="custom-button" id="Play">
+                Play
+            </TD>
+            <TD width="10"></TD>
+            <TD width="60" class="custom-button" id="Pause">
+                Pause
+            </TD>
+            <TD width="10"></TD>
+            <TD class="custom-button" id="Stop">
+                Stop
+            </TD>
+            <TD width="100%"></TD>
+        </TR>
+        <TR height="5">
+            <TD colspan="7"></TD>
+        </TR>
+    </TABLE>
+</body>
+</html>

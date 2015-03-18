@@ -1,0 +1,216 @@
+[
+    uuid(56ECA530-1D00-43d0-9465-4D7E3BBD361A),
+    version(1.0)
+]
+library RmBkFilter
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    import "axcore.idl";
+
+
+typedef struct _FrameInfo
+{
+   LONG             lFrame;
+   HDC              hdc;
+   RECT             rect;
+   
+} FRAME_INFO;
+
+
+	[
+		object,
+		uuid(5EE985B0-4AC4-41aa-A6A3-CB4AF09F21B6),
+		helpstring("IAdder Interface"),
+		pointer_default(unique)
+	]
+	interface IAdder: IUnknown
+	{
+		import "oaidl.idl";
+
+		HRESULT SetIntervals(void * MainIntervals,
+							 void * WebIntervals,
+							 void * WebPosIntervals,
+							 void * ArrowIntervals,
+							 void * TextIntervals);
+
+        HRESULT SetThumbnailPath(BSTR path);
+		
+	};
+
+	[
+		uuid(7EE71CDF-0198-4fed-B448-9460FA9E455D),
+		pointer_default(unique)
+	]
+	interface IFrameOverlay : IUnknown
+	{
+        [helpstring("Draws the overlay on the specified DC. Return S_OK or error code for error")]
+		HRESULT Draw([in] FRAME_INFO* pFrameInfo);
+        [helpstring("Returns begin frame and and frame of interval where overlay is valid")]
+		HRESULT GetBoundaries([out] LONG* plBegin, [out] LONG* plEnd);
+	};
+
+	[
+		object,
+		uuid(B5B31710-4D9E-4278-9BCF-9576BF758F29),
+		pointer_default(unique)
+	]
+	interface IOverlaysEnum : IUnknown
+	{
+		[helpstring("Resets enumerator to the very beginning.")]
+		HRESULT Rewind();
+		[helpstring("Returns next overlay and S_OK or S_FALSE if no more overlays left.")]
+		HRESULT GetNext([out] IFrameOverlay **ppOverlay);
+	};
+	[
+		uuid(09332D2A-ABD4-4dc9-8D30-16FE7FC20094),
+		pointer_default(unique)
+	]
+	interface ITimeline : IUnknown
+	{
+		[helpstring("Create a new instance of overlays enumerator. Enumerator is being reset, so Next() will return first element.")]
+		HRESULT GetOverlaysEnum([out] IOverlaysEnum **ppEnum);
+	};
+
+
+	[
+		uuid(73E4BA38-506C-4f95-A3BE-5C92C6277C58),
+		pointer_default(unique)
+	]
+	interface ITimelineFilter : IUnknown
+	{
+		[helpstring("Common interface for all Webinaria DirectShow filters which handles a timeline objects")]
+		HRESULT AssignTimeline([in] ITimeline* pTimeline);
+	};
+    
+
+
+	[
+		object,
+		uuid(D7332619-E6A9-4bf1-96DD-0FD203F0B47A),
+		helpstring("IFrameProcessCallback Interface"),
+		pointer_default(unique)
+	]
+	interface IFrameProcessCallback: IUnknown
+	{
+		HRESULT OnStart(LONG lWidth, LONG lHeight, LONG lWidthOpt, LONG lHeightOpt);
+		HRESULT OnFrame(BYTE* pFrame, BYTE* pOptional);
+		HRESULT OnStop();
+	};
+
+
+	[
+		object,
+		uuid(9A03C590-6EAF-4541-85E8-4F1DFB6D9A2A),
+		helpstring("IAdder Interface"),
+		pointer_default(unique)
+	]
+	interface IAudioSkip: IUnknown
+	{
+		import "oaidl.idl";
+		HRESULT SetIntervals(void * MainIntervals, void * AudioIntervals);
+		HRESULT SetSamplesCount(LONGLONG llFramesCount, LONGLONG llSamplesCount);
+	};
+
+	[
+		object,
+		uuid(908C5E37-0286-4230-9AC9-17B77DD7A20E),
+		helpstring("INotesAdder Interface"),
+		pointer_default(unique)
+	]
+	interface INotesAdder: IUnknown
+	{
+		import "oaidl.idl";
+
+		HRESULT SetIntervals(void * TextIntervals,
+							 void * ArrowIntervals);
+
+	};
+
+	[
+		object,
+		uuid(48F5FFC2-E3C4-4c19-AFF3-8B2F9D274B86),
+		helpstring("IParams Interface"),
+		pointer_default(unique)
+	]
+	interface IParams: IUnknown
+	{
+//		import "oaidl.idl";
+
+		typedef enum Params  {	
+								roParamSamplesTotal = 1,
+								roParamSamplesPassed  = 2,
+								roParamSampleRate = 3,
+								} Params;
+		HRESULT SetLong([in] LONG lParamId, [in] LONGLONG llParamValue);
+		HRESULT GetLong([in] LONG lParamId, [out] LONGLONG* pllParamValue);
+	};
+
+	[
+		object,
+		uuid(7E4526E6-A509-4dd0-A7F5-49276B8DBD73),
+		helpstring("ILogoFilter Interface"),
+		pointer_default(unique)
+	]
+	interface ILogoFilter: IUnknown
+	{
+        HRESULT SetLogoPath(BSTR smallLogoPath, BSTR largeLogoPath);
+	};
+
+	[
+        uuid(D42D63C8-2780-4b13-8DA9-65977993A6B2)
+    ]
+	coclass CWebinariaLogoFilter
+    {
+        [default] interface IUnknown;
+    };
+
+    [
+        uuid(345446AC-B638-40b4-BBE5-4098028AA14B)
+    ]
+    coclass CRemoveBackground
+    {
+        [default] interface IUnknown;
+    };
+
+	[
+        uuid(C513B782-0AB5-4e93-A9ED-B20C2D5C4ED6)
+    ]
+    coclass CAdder
+    {
+        [default] interface IUnknown;
+    };
+
+	[
+        uuid(A6435C17-FF74-4788-A503-60E27B0A6D4D)
+    ]
+    coclass CNotesAdder
+    {
+        [default] interface IUnknown;
+    };
+
+	[
+        uuid(12439433-F20A-4a58-9F95-DF33262717C6)
+    ]
+    coclass CAudioSkipper
+    {
+        [default] interface IUnknown;
+    };
+
+	[
+        uuid(FC2C83DF-37CA-44ab-9AC0-BDF1B88765AB)
+    ]
+    coclass CTimeRemover
+    {
+        [default] interface IUnknown;
+    };
+	[
+        uuid(CD26AE0C-4361-4e98-A817-B00AF1A5A456)
+    ]
+    coclass CSynchronizer
+    {
+        [default] interface IUnknown;
+		interface IParams;
+    };
+
+};
